@@ -7,5 +7,14 @@
         </div>
         <h2> {{ post.title }} </h2>
         <p> {{ post.text|linebreaksbr }} </p>
+
+        <br />
+        <br />
+        <div>
+            <h1> Comment's </h1>
+            {% for comm in comment %}
+                <p> {{ comm }} </p>
+            {% endfor %}
+        </div>
     </div>
 {% endblock  %}

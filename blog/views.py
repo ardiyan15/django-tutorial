@@ -7,4 +7,5 @@ def post_list(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
+    comment = Comment.objects.filter(post_id__id=pk)
+    return render(request, 'blog/post_detail.html', {'post': post, 'comment': comment})
